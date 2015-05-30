@@ -1,0 +1,4 @@
+.weiba-navbar {
+display:none;
+}
+.weiba-page {margin: 0 0 0 0;}
