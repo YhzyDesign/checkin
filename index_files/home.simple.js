@@ -1,7 +1,7 @@
 (function(a, b) {
 	var c = "/data/checkin/";
 	checkinUrl = {
-		home: c,
+		home: c+'mock.json',
 		exchange: c + "exchange_info",
 		exchange_record_list: c + "exchange_record_list",
 		exchange_list: c + "exchange_list",

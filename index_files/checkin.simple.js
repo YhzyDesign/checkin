@@ -1,4 +1,4 @@
-function checkin() {
+ï»¿function checkin() {
 	var b = $.getUID();
 	var a = $.getUrlParam("id");
 	this.init = function() {
@@ -15,26 +15,27 @@ function checkin() {
 				uid: b,
 				checkin_id: a
 			},
-			type: "post",
+			type: "get",
+			//type: "post",
 			dataType: "json"
-		}).done(function(f) {
+		}).done(function(f) { 
 			console.log(f);
 			if (f.ret == 0) {
 				var g = f.data;
 				if (g.is_over == "1") {
 					$(".today-score").hide();
-					$(".rs-title-txt").html("±¾´ÎÇ©µ½ÒÑ½áÊø")
+					$(".rs-title-txt").html("æœ¬æ¬¡ç­¾åˆ°å·²ç»“æŸ")
 				} else {
 					if (g.last_score >= "0") {
-						$(".rs-title-txt").html("½ñÌìÒÑÇ©µ½£¬Ã÷ÌìÇ©µ½¿É»ñ" + g.tomorrow_score + "»ı·Ö")
+						$(".rs-title-txt").html("ä»Šå¤©å·²ç­¾åˆ°ï¼Œæ˜å¤©ç­¾åˆ°å¯è·" + g.tomorrow_score + "ç§¯åˆ†")
 					} else {
-						$(".rs-title-txt").html("½ñÌìÒÑÇ©µ½")
+						$(".rs-title-txt").html("ä»Šå¤©å·²ç­¾åˆ°")
 					}
 				}
 				$(".rs-last-score").html(g.last_score);
 				if (g.today_score == "-1") {
 					$(".my-tips").addClass(".tip-error");
-					$(".rs-title-txt").html("½ñÈÕÎ´Ç©µ½");
+					$(".rs-title-txt").html("ä»Šæ—¥æœªç­¾åˆ°");
 					$(".today-score").hide()
 				} else {
 					$(".rs-today-score").html(g.today_score)
@@ -96,7 +97,8 @@ function checkin() {
 					}
 				})
 			}
-		}).fail(function() {}).always(function() {
+		}).fail(function() {})
+		.always(function() {
 			d()
 		})
 	}
@@ -115,6 +117,7 @@ function checkin() {
 	}
 }
 $(document).ready(function() {
+
 	$.checkUID();
 	var a = new checkin();
 	a.init()

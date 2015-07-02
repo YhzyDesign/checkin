@@ -24,6 +24,11 @@ if (!Date.now) {
     };
 }
 
+// code for debug start
+window.localStorage.setItem('WXID', 'wxid0001');
+window.localStorage.setItem('MYUID', 'myuid0001');
+// code for debug end
+	
 var $get_wxid=window.localStorage.getItem('WXID');
 var $UID=window.localStorage.getItem('MYUID');
 var storage=window.localStorage;

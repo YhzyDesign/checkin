@@ -1,0 +1,10 @@
+﻿{ "ret":0, 
+  "data": {"today_score": "-1",
+   "is_over" : "0",
+   "last_score" : "1",
+   "total_num" : "5",
+   "calendar_th" : "2015年6月-7月",
+   //"calendar_td" : [{"select":"0", "today":"0", "value":"6.1"}
+   //]
+  }
+}
